@@ -15,10 +15,7 @@ class String
   end
 
   def count_sentences
-    new_sentence = self.split(/.?!/)
-    new_sentence.to_a 
-    new_sentence.count
-
+    self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size 
 
   end
   #binding.pry
